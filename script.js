@@ -41,11 +41,25 @@ const allBtns = document.getElementsByTagName('button')
 const cookie = document.createElement('div')
 cookie.classList.add('cookie-message')
 cookie.innerHTML = 'We use cookie for something... Please give your permission to check on you :) <button class="btn btn--close-cookie">Yeah yeah..</button>'
-
+cookie.style.backgroundColor = '#37383d'
+cookie.style.width = '70%'
+cookie.style.padding = '15px'
+cookie.style['border-radius'] = '10px';
 header.append(cookie)
+
+console.log(getComputedStyle(cookie));
+
 
 const cookieBtn = document.querySelector('.btn--close-cookie')
 
 cookieBtn.addEventListener('click', () => {
   cookie.remove()
+})
+
+const btnScroll = document.querySelector('.btn--scroll-to')
+console.log(btnScroll);
+const section2 = document.getElementById('section--2')
+console.log(section2);
+btnScroll.addEventListener('click', () => {
+  section2.scrollIntoView({ behavior: 'smooth' })
 })
